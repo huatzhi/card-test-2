@@ -7,7 +7,6 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import Head from './components/Head.vue'
 import Content from './components/Content'
 
