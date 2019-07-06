@@ -8,7 +8,6 @@
         BB and B
       </button>
       <button class="btn btn-danger mr-1"  @click="anaW">
-        <span class="oi oi-arrow-thick-bottom" aria-hidden="true"></span>
         W
       </button>
     </div>
