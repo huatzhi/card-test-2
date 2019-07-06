@@ -1,29 +1,29 @@
 <template>
 <div>
-    <TestAnalysisCard @changeCard="changeCard" @testLog="testLog" />
+    <Start v-if="currentCardName==='Start'" @changeCard="changeCard" />
+    <TestAnalysisCard v-if="currentCardName==='TestAnalysisCard'" @changeCard="changeCard" />
 </div>
 </template>
 
 <script>
+import Start from "./AnalysisCards/Start";
 import TestAnalysisCard from "./AnalysisCards/TestAnalysisCard";
 
 export default {
     name: "AnalysisCards",
     components: {
+        Start,
         TestAnalysisCard,
     },
     data() {
       return {
-        currentCardName: "TestAnalysis"
+        currentCardName: "Start"
       }
     },
     methods: {
         changeCard(value) {
             this.currentCardName = String(value)
         },
-        testLog(value) {
-            console.log('here reach', value);
-        }
     }
 }
 </script>

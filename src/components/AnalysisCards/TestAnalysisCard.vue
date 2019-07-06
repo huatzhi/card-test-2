@@ -10,15 +10,15 @@
         <!-- <i class="fas fa-arrow-alt-circle-up"></i> -->
         Bullish
       </button>
-      <button class="btn btn-danger mr-1">
+      <button class="btn btn-danger mr-1" @click="bearish">
         <span class="oi oi-arrow-thick-bottom" aria-hidden="true"></span>
         Bearish
       </button>
-      <button class="btn btn-warning mr-1">
+      <button class="btn btn-warning mr-1" @click="next">
         <span class="oi oi-arrow-thick-right" aria-hidden="true"></span>
         None
       </button>
-      <button class="btn btn-secondary float-right">
+      <button class="btn btn-secondary float-right" @click="back">
         <span class="oi oi-arrow-thick-left" aria-hidden="true"></span>
         Back
       </button>
