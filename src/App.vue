@@ -2,17 +2,20 @@
   <div id="app" class="mt-2">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <Head msg="Welcome to Your Vue.js App"/>
+    <Content />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import Head from './components/Head.vue'
+import Content from './components/Content'
 
 export default {
   name: 'app',
   components: {
-    Head
+    Head,
+    Content
   }
 }
 </script>
