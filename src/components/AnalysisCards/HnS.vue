@@ -7,7 +7,6 @@
       <textarea name="notes" rows="2" placeholder="Notes..." class="form-control mb-2" v-model="note"></textarea>
       <button class="btn btn-success mr-1" @click="bullish">
         <span class="oi oi-arrow-thick-top" aria-hidden="true"></span>
-        <!-- <i class="fas fa-arrow-alt-circle-up"></i> -->
         Bullish
       </button>
       <button class="btn btn-danger mr-1" @click="bearish">
