@@ -22,22 +22,6 @@ export default {
       }
     }
   }
-  // methods: {
-  //   append: function (text) {
-  //     this.output += text;
-  //   },
-  //   clear: function () {
-  //     this.output = "";
-  //   },
-  //   newLine: function (text) {
-  //     this.output += "\n";
-  //     this.append(text);
-  //   },
-  //   newIndentLine: function (text) {
-  //     this.output += "\n  ";
-  //     this.append(text);
-  //   },
-  // }
 }
 </script>
 
