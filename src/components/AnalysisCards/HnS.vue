@@ -1,7 +1,7 @@
 <template>
   <div class="card mb-3">
     <div class="card-header">
-      <b>Test Analysis Criteria</b>
+      <b>Head and Shoulder?</b>
     </div>
     <div class="card-body">
       <textarea name="notes" rows="2" placeholder="Notes..." class="form-control mb-2" v-model="note"></textarea>
@@ -43,9 +43,9 @@ export default {
       this.$emit('changeCard', "TestAnalysisCard")
     },
     bearish() {
-      this.$store.dispatch("analysis/append", "\Bearish Head and Shoulder")
+      this.$store.dispatch("analysis/append", "\nBearish Head and Shoulder")
       if (this.note) {
-        this.$store.dispatch("analysis/append", "\n  -" + this.note)
+        this.$store.dispatch("analysis/append", "\n  - " + this.note)
       }
       this.$emit('changeCard', "TestAnalysisCard")
     },

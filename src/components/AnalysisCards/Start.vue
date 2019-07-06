@@ -31,7 +31,7 @@ export default {
       this.goToNextPage()
     },
     goToNextPage() {
-      this.$emit('changeCard', "TestAnalysisCard")
+      this.$emit('changeCard', "HnS")
     }
   }
 }
