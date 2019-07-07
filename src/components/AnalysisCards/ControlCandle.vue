@@ -35,10 +35,10 @@ export default {
       if (this.note) {
         this.$store.dispatch("analysis/append", "\nControl Candle - "+ this.note)
       }
-      this.$emit('changeCard', "TestAnalysisCard")
+      this.$emit('changeCard', "Swing")
     },
     next() {
-      this.$emit('changeCard', "TestAnalysisCard")
+      this.$emit('changeCard', "Swing")
     },
     back() {
       // todo :: (low priority) remove previous analysis
