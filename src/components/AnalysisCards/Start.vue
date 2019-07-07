@@ -31,7 +31,7 @@ export default {
       this.goToNextPage()
     },
     goToNextPage() {
-      this.$emit('changeCard', "HnS")
+      this.$emit('changeCard', "SceTrend")
     }
   }
 }

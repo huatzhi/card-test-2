@@ -1,17 +1,19 @@
 <template>
   <div class="card mb-3">
     <div class="card-header">
-      <b>Head and Shoulder?</b>
+      <b>Trending?</b>
     </div>
     <div class="card-body">
+      <p>DoeS it making HL-HH or LH-LL?</p>
+      <p>Draw TL if it does.</p>
       <textarea name="notes" rows="2" placeholder="Notes..." class="form-control mb-2" v-model="note"></textarea>
       <button class="btn btn-success mr-1" @click="bullish">
         <span class="oi oi-arrow-thick-top" aria-hidden="true"></span>
-        Bullish
+        Bullish (making HL-HH)
       </button>
       <button class="btn btn-danger mr-1" @click="bearish">
         <span class="oi oi-arrow-thick-bottom" aria-hidden="true"></span>
-        Bearish
+        Bearish (making LH-LL)
       </button>
       <button class="btn btn-warning mr-1" @click="next">
         <span class="oi oi-arrow-thick-right" aria-hidden="true"></span>
@@ -27,7 +29,7 @@
 
 <script>
 export default {
-  name: "HnS",
+  name: "SDTrend",
   data() {
     return {
       note: ""
@@ -35,25 +37,25 @@ export default {
   },
   methods: {
     bullish() {
-      this.$store.dispatch("analysis/append", "\nBullish Head and Shoulder")
-      if (this.note) {
-        this.$store.dispatch("analysis/append", "\n  -" + this.note)
-      }
-      this.$emit('changeCard', "TestAnalysisCard")
-    },
-    bearish() {
-      this.$store.dispatch("analysis/append", "\nBearish Head and Shoulder")
+      this.$store.dispatch("analysis/append", "\nTrending Up")
       if (this.note) {
         this.$store.dispatch("analysis/append", "\n  - " + this.note)
       }
-      this.$emit('changeCard', "TestAnalysisCard")
+      this.$emit('changeCard', "Triangle")
+    },
+    bearish() {
+      this.$store.dispatch("analysis/append", "\nTrending Down")
+      if (this.note) {
+        this.$store.dispatch("analysis/append", "\n  - " + this.note)
+      }
+      this.$emit('changeCard', "Triangle")
     },
     next() {
-      this.$emit('changeCard', "TestAnalysisCard")
+      this.$emit('changeCard', "Triangle")
     },
     back() {
       // todo :: (low priority) remove previous analysis
-      this.$emit('changeCard', "Triangle")
+      this.$emit('changeCard', "Start")
     }
   },
 };
