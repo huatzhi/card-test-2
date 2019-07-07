@@ -17,6 +17,7 @@ export default {
     let currentAnalysisTF = this.$store.state.analysis.currentAnalysisTF;
     if (analysisType === "BB&B" && currentAnalysisTF === "BB") {
       this.$store.dispatch("analysis/append", "\n\nB");
+      this.$store.commit("analysis/setCurrentAnalysisTF", "B")
       this.$emit('changeCard', "SceTrend")
     }
   }
