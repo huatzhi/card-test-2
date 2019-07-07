@@ -42,17 +42,17 @@ export default {
       if (this.note) {
         this.$store.dispatch("analysis/append", "\n  - " + this.note)
       }
-      this.$emit('changeCard', "TestAnalysisCard")
+      this.$emit('changeCard', "PriceRelative")
     },
     bearish() {
       this.$store.dispatch("analysis/append", "\nDown Swing")
       if (this.note) {
         this.$store.dispatch("analysis/append", "\n  - " + this.note)
       }
-      this.$emit('changeCard', "TestAnalysisCard")
+      this.$emit('changeCard', "PriceRelative")
     },
     next() {
-      this.$emit('changeCard', "TestAnalysisCard")
+      this.$emit('changeCard', "PriceRelative")
     },
     back() {
       // todo :: (low priority) remove previous analysis
