@@ -10,6 +10,11 @@
     <Flag v-if="currentCardName==='Flag'" @changeCard="changeCard" />
     <CupNHandle v-if="currentCardName==='CupNHandle'" @changeCard="changeCard" />
     <DSR v-if="currentCardName==='DSR'" @changeCard="changeCard" />
+    <DrawSR v-if="currentCardName==='DrawSR'" @changeCard="changeCard" />
+    <StratShadow v-if="currentCardName==='StratShadow'" @changeCard="changeCard" />
+    <Fibs v-if="currentCardName==='Fibs'" @changeCard="changeCard" />
+    <ControlCandle v-if="currentCardName==='ControlCandle'" @changeCard="changeCard" />
+    <Swing v-if="currentCardName==='Swing'" @changeCard="changeCard" />
     <TestAnalysisCard v-if="currentCardName==='TestAnalysisCard'" @changeCard="changeCard" />
 </div>
 </template>
@@ -25,12 +30,19 @@ import Cypher from "./AnalysisCards/Cypher";
 import Flag from "./AnalysisCards/Flag";
 import CupNHandle from "./AnalysisCards/CupNHandle";
 import DSR from "./AnalysisCards/DSR";
+import DrawSR from "./AnalysisCards/DrawSR";
+import StratShadow from "./AnalysisCards/StratShadow";
+import Fibs from "./AnalysisCards/Fibs";
+import ControlCandle from "./AnalysisCards/ControlCandle";
+import Swing from "./AnalysisCards/Swing";
 import TestAnalysisCard from "./AnalysisCards/TestAnalysisCard";
 
 export default {
     name: "AnalysisCards",
     components: {
         Start,
+        // etc
+        TestAnalysisCard,
         // big picture
         SceTrend,
         Triangle,
@@ -41,7 +53,13 @@ export default {
         Flag,
         CupNHandle,
         DSR,
-        TestAnalysisCard,
+        StratShadow,
+        Fibs,
+        // SR
+        DrawSR,
+        // close up
+        ControlCandle,
+        Swing,
     },
     data() {
       return {

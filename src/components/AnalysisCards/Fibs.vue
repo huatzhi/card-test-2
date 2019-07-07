@@ -1,17 +1,17 @@
 <template>
   <div class="card mb-3">
     <div class="card-header">
-      <b>Other obvious Trend Lines or DSR?</b>
+      <b>Fibonacci Confluences?</b>
     </div>
     <div class="card-body">
-      <p>Draw them if they exists <b>and relevant</b>.</p>
+      <p>Draw them if they <b>relevant</b>.</p>
       <textarea name="notes" rows="2" placeholder="Notes..." class="form-control mb-2" v-model="note"></textarea>
       <button class="btn btn-success mr-1" @click="exist">
-        Exist
+        Relevant
       </button>
       <button class="btn btn-warning mr-1" @click="next">
         <span class="oi oi-arrow-thick-right" aria-hidden="true"></span>
-        None
+        Not relevant
       </button>
       <button class="btn btn-secondary float-right" @click="back">
         <span class="oi oi-arrow-thick-left" aria-hidden="true"></span>
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "DSR",
+  name: "Fibs",
   data() {
     return {
       note: ""
@@ -32,16 +32,16 @@ export default {
   methods: {
     exist() {
       if (this.note) {
-        this.$store.dispatch("analysis/append", "\nTL - "+ this.note)
+        this.$store.dispatch("analysis/append", "\nItalian Ice Cream Man - "+ this.note)
       }
-      this.$emit('changeCard', "StratShadow")
+      this.$emit('changeCard', "DrawSR")
     },
     next() {
-      this.$emit('changeCard', "StratShadow")
+      this.$emit('changeCard', "DrawSR")
     },
     back() {
       // todo :: (low priority) remove previous analysis
-      this.$emit('changeCard', "CupNHandle")
+      this.$emit('changeCard', "StratShadow")
     }
   },
 };
