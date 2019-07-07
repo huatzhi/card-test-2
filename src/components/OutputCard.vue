@@ -4,7 +4,7 @@
       Analysis Record
     </div>
     <div class="card-body">
-      <textarea disabled class="bg-white form-control" v-model="analysis" rows="10"></textarea>
+      <textarea disabled class="bg-white form-control" v-model="analysis" rows="10" id="analysis-output"></textarea>
     </div>
   </div>
 </template>
@@ -21,6 +21,11 @@ export default {
         this.$store.commit("analysis/updateText", value);
       }
     }
+  },
+  updated() {
+    // todo :: if editable, this have to stop working when edit mode is on
+    let elem = this.$el.querySelector("#analysis-output");
+    elem.scrollTop = elem.scrollHeight;
   }
 }
 </script>
