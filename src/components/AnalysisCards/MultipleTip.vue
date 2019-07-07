@@ -1,18 +1,19 @@
 <template>
   <div class="card mb-3">
     <div class="card-header">
-      <b>Any relevant Head and Shoulder?</b>
+      <b>Double/Triple Tops/Bottoms?</b>
     </div>
     <div class="card-body">
-      <p>Generally want to notice it when 2nd shoulder potentially forming.</p>
+      <p>Is there such price pattern at last swing or the next relevant SR? </p>
+      <p><b>Skip this if it is horizontal channel.</b> (Which you should had mentioned it on last card)</p>
       <textarea name="notes" rows="2" placeholder="Notes..." class="form-control mb-2" v-model="note"></textarea>
       <button class="btn btn-success mr-1" @click="bullish">
         <span class="oi oi-arrow-thick-top" aria-hidden="true"></span>
-        Bullish
+        Multiple Bottom (Bullish)
       </button>
       <button class="btn btn-danger mr-1" @click="bearish">
         <span class="oi oi-arrow-thick-bottom" aria-hidden="true"></span>
-        Bearish
+        Multiple Top (Bearish)
       </button>
       <button class="btn btn-warning mr-1" @click="next">
         <span class="oi oi-arrow-thick-right" aria-hidden="true"></span>
@@ -40,21 +41,21 @@ export default {
       if (this.note) {
         this.$store.dispatch("analysis/append", "\n  -" + this.note)
       }
-      this.$emit('changeCard', "Gartley")
+      this.$emit('changeCard', "HnS")
     },
     bearish() {
       this.$store.dispatch("analysis/append", "\nBearish Head and Shoulder")
       if (this.note) {
         this.$store.dispatch("analysis/append", "\n  - " + this.note)
       }
-      this.$emit('changeCard', "Gartley")
+      this.$emit('changeCard', "HnS")
     },
     next() {
-      this.$emit('changeCard', "Gartley")
+      this.$emit('changeCard', "HnS")
     },
     back() {
       // todo :: (low priority) remove previous analysis
-      this.$emit('changeCard', "MultipleTip")
+      this.$emit('changeCard', "Triangle")
     }
   },
 };

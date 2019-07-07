@@ -1,18 +1,19 @@
 <template>
   <div class="card mb-3">
     <div class="card-header">
-      <b>Any relevant Head and Shoulder?</b>
+      <b>Flag pattern?</b>
     </div>
     <div class="card-body">
-      <p>Generally want to notice it when 2nd shoulder potentially forming.</p>
+      <p>It exist only after a sharp price shooting. <a href="https://www.profitf.com/articles/forex-education/flags-pennants-chart-patterns/">Learn more...</a></p>
+      <p>This pattern exist only when you can see it clearly, usually confluence with other stuffs. Ignore when vague</p>
       <textarea name="notes" rows="2" placeholder="Notes..." class="form-control mb-2" v-model="note"></textarea>
       <button class="btn btn-success mr-1" @click="bullish">
         <span class="oi oi-arrow-thick-top" aria-hidden="true"></span>
-        Bullish
+        Bullish Flag
       </button>
       <button class="btn btn-danger mr-1" @click="bearish">
         <span class="oi oi-arrow-thick-bottom" aria-hidden="true"></span>
-        Bearish
+        Bearish Flag
       </button>
       <button class="btn btn-warning mr-1" @click="next">
         <span class="oi oi-arrow-thick-right" aria-hidden="true"></span>
@@ -28,7 +29,7 @@
 
 <script>
 export default {
-  name: "HnS",
+  name: "Flag",
   data() {
     return {
       note: ""
@@ -36,25 +37,25 @@ export default {
   },
   methods: {
     bullish() {
-      this.$store.dispatch("analysis/append", "\nBullish Head and Shoulder")
+      this.$store.dispatch("analysis/append", "\nBullish Flag")
       if (this.note) {
         this.$store.dispatch("analysis/append", "\n  -" + this.note)
       }
-      this.$emit('changeCard', "Gartley")
+      this.$emit('changeCard', "CupNHandle")
     },
     bearish() {
-      this.$store.dispatch("analysis/append", "\nBearish Head and Shoulder")
+      this.$store.dispatch("analysis/append", "\nBearish Flag")
       if (this.note) {
         this.$store.dispatch("analysis/append", "\n  - " + this.note)
       }
-      this.$emit('changeCard', "Gartley")
+      this.$emit('changeCard', "CupNHandle")
     },
     next() {
-      this.$emit('changeCard', "Gartley")
+      this.$emit('changeCard', "CupNHandle")
     },
     back() {
       // todo :: (low priority) remove previous analysis
-      this.$emit('changeCard', "MultipleTip")
+      this.$emit('changeCard', "Cypher")
     }
   },
 };

@@ -1,18 +1,20 @@
 <template>
   <div class="card mb-3">
     <div class="card-header">
-      <b>Any relevant Head and Shoulder?</b>
+      <b>Is it potentially forming Gartley pattern?</b>
     </div>
     <div class="card-body">
-      <p>Generally want to notice it when 2nd shoulder potentially forming.</p>
+      <p>A smaller reverse ABCD trend, on the D back to the main trend.</p>
+      <p>Determine which Gartley potentially forming when potentially D is forming.</p>
+      <p>D will be the interesting price, if it confluence with SR, that would be important.</p>
       <textarea name="notes" rows="2" placeholder="Notes..." class="form-control mb-2" v-model="note"></textarea>
       <button class="btn btn-success mr-1" @click="bullish">
         <span class="oi oi-arrow-thick-top" aria-hidden="true"></span>
-        Bullish
+        Bullish Gartley
       </button>
       <button class="btn btn-danger mr-1" @click="bearish">
         <span class="oi oi-arrow-thick-bottom" aria-hidden="true"></span>
-        Bearish
+        Bearish Gartley
       </button>
       <button class="btn btn-warning mr-1" @click="next">
         <span class="oi oi-arrow-thick-right" aria-hidden="true"></span>
@@ -28,7 +30,7 @@
 
 <script>
 export default {
-  name: "HnS",
+  name: "Gartley",
   data() {
     return {
       note: ""
@@ -36,25 +38,25 @@ export default {
   },
   methods: {
     bullish() {
-      this.$store.dispatch("analysis/append", "\nBullish Head and Shoulder")
+      this.$store.dispatch("analysis/append", "\nBullish Gartley")
       if (this.note) {
         this.$store.dispatch("analysis/append", "\n  -" + this.note)
       }
-      this.$emit('changeCard', "Gartley")
+      this.$emit('changeCard', "Cypher")
     },
     bearish() {
-      this.$store.dispatch("analysis/append", "\nBearish Head and Shoulder")
+      this.$store.dispatch("analysis/append", "\nBearish Gartley")
       if (this.note) {
         this.$store.dispatch("analysis/append", "\n  - " + this.note)
       }
-      this.$emit('changeCard', "Gartley")
+      this.$emit('changeCard', "Cypher")
     },
     next() {
-      this.$emit('changeCard', "Gartley")
+      this.$emit('changeCard', "Cypher")
     },
     back() {
       // todo :: (low priority) remove previous analysis
-      this.$emit('changeCard', "MultipleTip")
+      this.$emit('changeCard', "HnS")
     }
   },
 };
