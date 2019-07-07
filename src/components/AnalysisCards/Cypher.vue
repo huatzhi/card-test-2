@@ -40,7 +40,7 @@ export default {
     bullish() {
       this.$store.dispatch("analysis/append", "\nBullish Cypher")
       if (this.note) {
-        this.$store.dispatch("analysis/append", "\n  -" + this.note)
+        this.$store.dispatch("analysis/append", "\n  - " + this.note)
       }
       this.$emit('changeCard', "Flag")
     },

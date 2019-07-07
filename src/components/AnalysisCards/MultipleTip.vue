@@ -39,7 +39,7 @@ export default {
     bullish() {
       this.$store.dispatch("analysis/append", "\nBullish Head and Shoulder")
       if (this.note) {
-        this.$store.dispatch("analysis/append", "\n  -" + this.note)
+        this.$store.dispatch("analysis/append", "\n  - " + this.note)
       }
       this.$emit('changeCard', "HnS")
     },
