@@ -17,6 +17,7 @@
     <Swing v-if="currentCardName==='Swing'" @changeCard="changeCard" :key="key" />
     <PriceRelative v-if="currentCardName==='PriceRelative'" @changeCard="changeCard" :key="key" />
     <Price v-if="currentCardName==='Price'" @changeCard="changeCard" :key="key" />
+    <End v-if="currentCardName==='End'" @changeCard="changeCard" :key="key" />
     <TestAnalysisCard v-if="currentCardName==='TestAnalysisCard'" @changeCard="changeCard" :key="key" />
 </div>
 </template>
@@ -39,6 +40,7 @@ import ControlCandle from "./AnalysisCards/ControlCandle";
 import Swing from "./AnalysisCards/Swing";
 import PriceRelative from "./AnalysisCards/PriceRelative";
 import Price from "./AnalysisCards/Price";
+import End from "./AnalysisCards/End";
 import TestAnalysisCard from "./AnalysisCards/TestAnalysisCard";
 
 export default {
@@ -66,6 +68,7 @@ export default {
         Swing,
         PriceRelative,
         Price,
+        End
     },
     data() {
         return {
